@@ -1,37 +1,47 @@
 body {
     font-family: 'Kanit', sans-serif;
-    background-color: #FFFAF0;
+    background-color: #F0F8FF;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
+    overflow: hidden;
 }
 
 #app {
-    background: #FFFFFF;
+    background: white;
     padding: 30px;
     border-radius: 20px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     width: 400px;
     text-align: center;
     transition: transform 0.2s;
+    position: relative;
 }
 
-#app:hover {
-    transform: scale(1.03);
+.ticket-header h1 {
+    color: #FF4081;
+    font-size: 30px;
+    margin-bottom: 5px;
 }
 
-h1 {
-    color: #FF6F61;
+.ticket-header p {
+    color: #707070;
     margin-bottom: 20px;
-    font-size: 28px;
+}
+
+.form-container {
+    background-color: #FFFAFA;
+    padding: 20px;
+    border-radius: 12px;
+    border: 2px solid #FF4081;
 }
 
 input, select {
     padding: 10px;
     width: 85%;
-    border: 2px solid #FFB6C1;
+    border: 2px solid #FF4081;
     border-radius: 12px;
     margin-bottom: 15px;
     font-size: 16px;
@@ -45,7 +55,7 @@ input:focus, select:focus {
 }
 
 button {
-    background-color: #FF6F61;
+    background-color: #FF4081;
     color: white;
     padding: 12px 25px;
     border: none;
@@ -56,14 +66,14 @@ button {
 }
 
 button:hover {
-    background-color: #FF4040;
+    background-color: #FF007F;
     transform: scale(1.05);
 }
 
 #result {
     margin-top: 20px;
     font-size: 18px;
-    color: #FF6F61;
+    color: #FF4081;
 }
 
 #previousResults {
@@ -72,4 +82,22 @@ button:hover {
     border-top: 1px solid #FFB6C1;
     font-size: 14px;
     color: #707070;
+}
+
+/* แท่งไฟ Animation */
+.lightstick-animation {
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    width: 100px;
+    height: 300px;
+    background: linear-gradient(180deg, #FF69B4 30%, #FFFFFF 70%);
+    border-radius: 20px;
+    transform: rotate(45deg);
+    animation: wave 2s infinite;
+}
+
+@keyframes wave {
+    0%, 100% { transform: rotate(45deg); }
+    50% { transform: rotate(50deg); }
 }
