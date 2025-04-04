@@ -8,15 +8,15 @@ const min = 1;
 const max = 10;
 let availableNumbers = Array.from({length: max - min + 1}, (_, i) => i + min);
 
-function loadPreviousResults(task) {
-    const savedData = localStorage.getItem(`randomQueueResults-${task}`);
-    return savedData ? JSON.parse(savedData) : [];
-}
-
 function saveResult(task, name, queueNumber) {
     const previousResults = loadPreviousResults(task);
     previousResults.push({ name, queueNumber, timestamp: new Date().toLocaleString() });
     localStorage.setItem(`randomQueueResults-${task}`, JSON.stringify(previousResults));
+}
+
+function loadPreviousResults(task) {
+    const savedData = localStorage.getItem(`randomQueueResults-${task}`);
+    return savedData ? JSON.parse(savedData) : [];
 }
 
 function displayPreviousResults(task) {
@@ -51,11 +51,9 @@ generateButton.addEventListener('click', () => {
     displayPreviousResults(task);
 });
 
-// แสดงประวัติของงานที่เลือกเมื่อเปลี่ยนงาน
 taskSelector.addEventListener('change', () => {
     const task = taskSelector.value;
     displayPreviousResults(task);
 });
 
-// โหลดประวัติของงานที่เลือกครั้งแรกเมื่อเปิดหน้าเว็บ
 displayPreviousResults(taskSelector.value);
