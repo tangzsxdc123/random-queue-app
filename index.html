@@ -2,10 +2,21 @@
 <html>
 <head>
     <title>สุ่มคิวงาน</title>
-    <link rel="stylesheet" href="style.css"> <!-- อ้างอิงไปที่ไฟล์ CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="root"></div> <!-- ตรงนี้จะเป็นที่แสดงผลจาก JavaScript -->
-    <script src="script.js"></script> <!-- อ้างอิงไปที่ไฟล์ JavaScript -->
+    <div id="app">
+        <h1>สุ่มคิวงาน</h1>
+        <select id="taskSelector">
+            <option value="งาน A">งาน A</option>
+            <option value="งาน B">งาน B</option>
+            <option value="งาน C">งาน C</option>
+        </select>
+        <input id="nameInput" placeholder="กรอกชื่อของคุณ">
+        <button id="generateButton">สุ่มคิว</button>
+        <div id="result"></div>
+        <div id="previousResults"></div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
